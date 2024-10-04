@@ -12,9 +12,9 @@ CREATE TABLE IF NOT EXISTS "Client" (
 
 CREATE TABLE IF NOT EXISTS "Commande" (
 	"commande_id" INTEGER NOT NULL UNIQUE,
+	"client_id" INTEGER NOT NULL,
 	"date_commande" DATE NOT NULL,
 	"montant_commande" REAL NOT NULL,
-	"client_id" INTEGER NOT NULL,
 	PRIMARY KEY("commande_id"),
 	FOREIGN KEY ("client_id") REFERENCES "Client"("client_id")
 	ON UPDATE NO ACTION ON DELETE NO ACTION
